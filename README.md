@@ -1,19 +1,19 @@
 ## 导入模型
-从训练中选择、指定元模型位置两种方式均需要填写推理代码位置
+有训练中选择、指定元模型位置两种方式
 
-![](./images/导入模型.png)
+训练中选择：
 
-* 图像分类用推理代码：
+![](./images/导入参数2.png)
 
-   https://github.com/huawei-clouds/modelarts-mxnet/blob/master/code/predict/cnn/dls_classification_service.py
-   
-   修改变量`top_k=5`控制输出类别个数，**该值应小于总类别数**
+指定元模型导入：
 
-* 物体检测用推理代码：
+元模型目录结构如下，选择路劲时选择到model目录：
 
-  https://github.com/huawei-clouds/modelarts-mxnet/blob/master/code/predict/object_detection/dls_faster_rcnn_service.py
-  
-  修改变量`NUM_CLASSES=21`控制检测物体类别数
+![](./images/upload.png)
+
+其中config.json是配置文件，customize_service.py是推理代码，名称都不可改变
+
+![](./images/导入参数.png)
 
 ## 模型部署
 部署预测服务时需要添加环境变量input_data_name=images
@@ -37,7 +37,7 @@
    类别：0-背景 
    
         1-犬球虫病寄生虫
-        
+   
    预测服务环境变量：input_data_name=images
 
 2. mx_flower_squeezenet	
@@ -95,7 +95,7 @@
         8- aotus nigriceps
         
         9- trachypithecus johnii
-        
+   
    预测服务环境变量：input_data_name=images
 
 4. mx_caltech256_inception
@@ -124,7 +124,7 @@
    引擎：mxnet 
 
    数据集：猫狗分类，https://www.kaggle.com/tongpython/cat-and-dog
- 
+
    精度：98%（top1）
 
    类别：0-猫 
